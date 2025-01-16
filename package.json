@@ -17,6 +17,13 @@
   "build": {
     "appId": "com.example.virtualcam",
     "productName": "Virtualcam",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "CharlesCondon",
+        "repo": "Virtualcam"
+      }
+    ],
     "files": [
       "main.js",
       "hough.js",
