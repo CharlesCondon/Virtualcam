@@ -1,0 +1,45 @@
+{
+  "name": "virtualcam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Charles Condon",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^29.0.1"
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.example.virtualcam",
+    "productName": "Virtualcam",
+    "files": [
+      "main.js",
+      "hough.js",
+      "index.html",
+      "sketch.js",
+      "styles.css",
+      "requirements.txt",
+      "virtual_cam.py",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+
+}

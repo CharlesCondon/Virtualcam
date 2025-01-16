@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtualcam</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/addons/p5.sound.js"></script>
+    <script src="https://raw.githubusercontent.com/ucisysarch/opencvjs/master/build/cv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsfeat/0.0.8/jsfeat-min.js"></script>
+    <script src="hough.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="visuals"></main>
+    <div class="control-container">
+        <div class="overlay-controls">
+            <div class="overlay-toggles">
+                <div id="overlayCont" class="slider-container overlay-toggle">
+                    <label for="overlay">Overlay</label>
+                    <input type="checkbox" id="overlay" name="overlay" value="overlay" checked>
+                </div>
+                <div id="camCont" class="slider-container overlay-toggle">
+                    <label for="cam">Camera</label>
+                    <input type="checkbox" id="cam" name="cam" value="cam" checked>
+                </div>
+                <div id="discoCont" class="slider-container overlay-toggle">
+                    <label for="disco">Disco Mode</label>
+                    <input type="checkbox" id="disco" name="disco" value="disco">
+                </div>
+            </div>
+            <div id="controls">
+                <button onclick="setActiveSketch(1)">Inward Spiral</button>
+                <button onclick="setActiveSketch(2)">Wavelength</button>
+                <button onclick="setActiveSketch(3)">Cross</button>
+                <button onclick="setActiveSketch(4)">Horizon</button>
+                <button onclick="setActiveSketch(5)">Vertical</button>
+                <button onclick="setActiveSketch(6)">Sun</button>
+                <button onclick="setActiveSketch(7)">Sun 2</button>
+                <button onclick="setActiveSketch(8)">Shell</button>
+                <button onclick="setActiveSketch(9)">Ring</button>
+                <!-- <button onclick="setActiveSketch(7)">Worley</button> -->
+            </div>
+        </div>
+        <div class="controls-secondary">
+            <div id="bgCont" class="slider-container">
+                <p>Background Opacity</p>
+            </div>
+    
+            <div id="speedCont" class="slider-container">
+                <p>Speed</p>
+            </div>
+    
+            <div id="weightCont" class="slider-container">
+                <p>Line Weight</p>
+            </div>
+    
+            
+        </div>
+        <div class="controls-secondary filters-container">
+            <div class="overlay-toggles filter-toggles">
+                <!-- <div id="dotCont" class="slider-container">
+                    <label for="dot">Dot Outline</label>
+                    <input type="checkbox" id="dot" name="dot" value="dot">
+                </div> -->
+                <!-- <div id="orbCont" class="slider-container">
+                    <label for="orb">Orb Outline</label>
+                    <input type="checkbox" id="orb" name="orb" value="orb">
+                </div> -->
+                <div id="stickyCont" class="slider-container overlay-toggle">
+                    <label for="sticky">Cubic</label>
+                    <input type="checkbox" id="sticky" name="sticky" value="sticky">
+                </div>
+                <div id="cubicCont" class="slider-container overlay-toggle">
+                    <label for="cubic">Mosaic</label>
+                    <input type="checkbox" id="cubic" name="cubic" value="cubic">
+                </div>
+                <div id="asciiCont" class="slider-container overlay-toggle">
+                    <label for="ascii">Ascii</label>
+                    <input type="checkbox" id="ascii" name="ascii" value="ascii">
+                </div>
+            </div>
+            <div id="scalerCont" class="slider-container">
+                <p style="opacity: 0.15;">Scale</p>
+            </div>
+        </div>
+        <div class="controls-secondary filters-container">
+            <div id="spaghettiCont" class="slider-container">
+                <label for="spaghetti">Spaghetti</label>
+                <input type="checkbox" id="spaghetti" name="spaghetti" value="spaghetti">
+            </div>
+            <div id="blurCont" class="slider-container">
+                <p style="opacity: 0.15;">Blur</p>
+            </div>
+        </div>
+        <!-- <div class="controls-secondary filters-container">
+            <div id="motionCont" class="slider-container">
+                <label for="motion">Motion</label>
+                <input type="checkbox" id="motion" name="motion" value="motion">
+            </div>
+            <div id="threshCont" class="slider-container">
+                <p style="opacity: 0.15;">Threshold</p>
+            </div>
+        </div> -->
+    </div>
+</body>
+</html>
